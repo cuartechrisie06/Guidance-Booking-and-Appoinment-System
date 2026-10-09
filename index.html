@@ -112,8 +112,8 @@ const MOM='Mother (Mrs. Corazon Dela Cruz)',SX={
 7:{note:'Feeling isolated after moving to Tagum for school.',ph:'+63 920 118 9032',rel:'Aunt (Mrs. Grace Mendoza)',ack:1},
 8:{note:'Stress from group project conflicts.',ph:'+63 915 776 2290',rel:'Mother (Mrs. Celia Villanueva)',ack:1},
 9:{note:'Needs clearance signing for scholarship renewal.',ph:'+63 916 909 3345',rel:'Father (Mr. Henry Lim)',ack:1,rec:{dur:'30 min',notes:'Routine intake interview completed. No concerns raised.',recs:'Clearance signed. Submit the signed form to the Scholarship Office.',fu:'None',ref:'None',by:'Clarissa Mae Gomez'}},
-10:{rec:{dur:'60 min',notes:'Student arrived with panic symptoms before a major exam. Grounding and breathing exercises done; symptoms subsided. No risk of self-harm reported.',recs:'Practice the breathing exercise daily. Visit the University Clinic for a check-up. Return for a follow-up session next week.',fu:'1 week',ref:'University Clinic',by:'Arthur P. Tan'}},
-11:{rec:{dur:'30 min',notes:'Walk-in for routine interview as a transferee. Oriented on GSTC services.',recs:'Complete the individual inventory form and submit to GSTC.',fu:'None',ref:'None',by:'Maria Elena Santos'}}};
+10:{note:'Came to the office shaking and anxious right before a major exam.',rec:{dur:'60 min',notes:'Student arrived with panic symptoms before a major exam. Grounding and breathing exercises done; symptoms subsided. No risk of self-harm reported.',recs:'Practice the breathing exercise daily. Visit the University Clinic for a check-up. Return for a follow-up session next week.',fu:'1 week',ref:'University Clinic',by:'Arthur P. Tan'}},
+11:{note:'Transferee asking about the routine interview requirement.',rec:{dur:'30 min',notes:'Walk-in for routine interview as a transferee. Oriented on GSTC services.',recs:'Complete the individual inventory form and submit to GSTC.',fu:'None',ref:'None',by:'Maria Elena Santos'}}};
 const seed=()=>{const s=seed0();s.bk.forEach(b=>Object.assign(b,SX[b.id]||{}));return s};
 const seed0=()=>({user:null,id:12,bk:[
 {id:1,sid:'145976',stu:'Juan Dela Cruz Jr.',sub:'BSIT 3rd Yr',svc:1,cn:'c1',date:day(3),time:'9:30 AM',st:'Approved'},
@@ -128,8 +128,8 @@ const seed0=()=>({user:null,id:12,bk:[
 {id:10,sid:'147120',stu:'Paolo Garcia',sub:'BSED',svc:2,cn:'c2',date:day(-1),time:'10:05 AM',st:'Completed',w:1,lvl:'Urgent'},
 {id:11,sid:'148345',stu:'Kim Santos',sub:'BSIT',svc:3,cn:'c1',date:day(0),time:'9:12 AM',st:'Completed',w:1,lvl:'Routine'}],
 blk:{},dr:{}});
-let S;try{S=JSON.parse(localStorage.getItem('gstc5')||'null')}catch(e){}S=S||seed();S.dr=S.dr||{};
-const save=()=>{try{localStorage.setItem('gstc5',JSON.stringify(S))}catch(e){}};
+let S;try{S=JSON.parse(localStorage.getItem('gstc6')||'null')}catch(e){}S=S||seed();S.dr=S.dr||{};
+const save=()=>{try{localStorage.setItem('gstc6',JSON.stringify(S))}catch(e){}};
 const setTheme=t=>{try{localStorage.setItem('gstc-theme',t)}catch(e){}if(t=='system')delete document.documentElement.dataset.theme;else document.documentElement.dataset.theme=t};
 try{const t=localStorage.getItem('gstc-theme');if(t&&t!='system')document.documentElement.dataset.theme=t}catch(e){}
 const toast=m=>{const t=$('#toast');t.textContent=m;t.style.display='block';clearTimeout(t.t);t.t=setTimeout(()=>t.style.display='none',2600)};
